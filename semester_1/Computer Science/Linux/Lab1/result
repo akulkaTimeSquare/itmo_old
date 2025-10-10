@@ -1,0 +1,13 @@
+ Static hostname: c0rishost
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: a897f2bbaa0a458aa64242206422ba78
+         Boot ID: b40cf8fdabb541beaf95bfd7e8afd619
+  Virtualization: kvm
+Operating System: Arch Linux
+          Kernel: Linux 6.0.2-arch1-1
+    Architecture: x86-64
+ Hardware Vendor: QEMU
+  Hardware Model: Standard PC _Q35 + ICH9, 2009_
+Firmware Version: Arch Linux 1.16.0-3-3
+9de00d6a591862c4f3a8a71222681eba044916d5  -

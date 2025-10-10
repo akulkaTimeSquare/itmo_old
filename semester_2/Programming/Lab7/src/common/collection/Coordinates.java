@@ -1,0 +1,36 @@
+package common.collection;
+
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Coordinates implements Comparable<Coordinates>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 2L;
+    private double x;
+    /** max value of y field - 87, y is not null */
+    private Float y;
+
+    public Coordinates (double x, Float y) throws NumberFormatException {
+        if (y > 87) throw new NumberFormatException();
+        this.x = x;
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public Float getY() {
+        return y;
+    }
+
+    @Override
+    public int compareTo(Coordinates c) {
+        return (int) (this.x - c.getX() + this.y - c.y);
+    }
+
+    @Override
+    public String toString() {
+        return x + " " + y.toString();
+    }
+}

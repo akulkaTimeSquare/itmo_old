@@ -1,0 +1,1451 @@
+Script started on 2022-11-07 22:13:40+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="110" LINES="28"]
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo cat /etc/passwd
+passwd   passwd-  
+[c0ris@c0rishost ~]$ sudo cat /etc/passwd
+[?2004l
+[sudo] password for c0ris: 
+root:x:0:0::/root:/bin/bash
+bin:x:1:1::/:/usr/bin/nologin
+daemon:x:2:2::/:/usr/bin/nologin
+mail:x:8:12::/var/spool/mail:/usr/bin/nologin
+ftp:x:14:11::/srv/ftp:/usr/bin/nologin
+http:x:33:33::/srv/http:/usr/bin/nologin
+nobody:x:65534:65534:Nobody:/:/usr/bin/nologin
+dbus:x:81:81:System Message Bus:/:/usr/bin/nologin
+systemd-coredump:x:981:981:systemd Core Dumper:/:/usr/bin/nologin
+systemd-network:x:980:980:systemd Network Management:/:/usr/bin/nologin
+systemd-oom:x:979:979:systemd Userspace OOM Killer:/:/usr/bin/nologin
+systemd-journal-remote:x:978:978:systemd Journal Remote:/:/usr/bin/nologin
+systemd-resolve:x:977:977:systemd Resolver:/:/usr/bin/nologin
+systemd-timesync:x:976:976:systemd Time Synchronization:/:/usr/bin/nologin
+tss:x:975:975:tss user for tpm2:/:/usr/bin/nologin
+uuidd:x:68:68::/:/usr/bin/nologin
+dhcpcd:x:974:974:dhcpcd privilege separation:/:/usr/bin/nologin
+c0ris:x:1000:1000::/home/c0ris:/bin/bash
+avahi:x:973:973:Avahi mDNS/DNS-SD daemon:/:/usr/bin/nologin
+polkitd:x:102:102:PolicyKit daemon:/:/usr/bin/nologin
+rtkit:x:133:133:RealtimeKit:/proc:/usr/bin/nologin
+sddm:x:972:972:Simple Desktop Display Manager:/var/lib/sddm:/usr/bin/nologin
+usbmux:x:140:140:usbmux user:/:/usr/bin/nologin
+geoclue:x:971:971:Geoinformation service:/var/lib/geoclue:/usr/bin/nologin
+mysql:x:970:970:MariaDB:/var/lib/mysql:/usr/bin/nologin
+saned:x:969:969:SANE daemon user:/:/usr/bin/nologin
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ add user[K[K[K[K[K[K[K[Ksu[K[Kuseradd krokodile[K
+[?2004l
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ useradd krokodil[1@s[C[1@u[1@d[1@o[1@ 
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ user[K[K[K[Kgr[K[Kgroupadd [K[K[K[K[K[K[K[K[Ksudo groupadd k[Kkrokodiles
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo usermod -aG k[Kkrod[Kkodiles krokodil
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ groups
+[?2004l
+wheel c0ris
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ cat [K[K[K[Kcat /et[K[K[K[K[K[K[Ksudo cat/ [K[K /etc/groups |[K| grep krokodiles
+[?2004l
+cat: /etc/groups: No such file or directory
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo cat /etc/groups | grep krokodiles[1P[1P[1@p
+[?2004l
+krokodiles:x:1002:krokodil
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo useradd -g krokodiles krodo[K[Kko1
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo useradd -g krokodiles kroko1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /etc/group | grep krokodiles
+[?2004l
+krokodiles:x:1002:krokodil
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo cat /etc/group | grep krokodiles[4Puseradd -g krokodiles kroko1[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kh
+[?2004l
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badnames                do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo useradd -hcat /etc/group | grep krokodiles
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuseradd -h[K[KG krokodiles [C[1@ [1@k[1@r[1@o[1@k[1@o[1@d[1@i[1@l[1@e[1P[1P[1P[1P
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ cat [29@sudo useradd kroko -G krokodiles[C-h[Kcat /etc/group | grep krokodiles
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Puseradd -g krokodiles kroko1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /etc/group | grep krokodiles[1@s[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgroups[K[K[K[K[K[K[Kgroups
+[?2004l
+wheel c0ris
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ groupssudo useradd kroko -G krokodiles -h[Kcat /etc/group | grep krokodiles
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Puseradd -g krokodiles kroko1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /etc/group | grep krokodiles[1@s[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgroups[Ksudo usermod -aG krokodiles krokodil
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgroups[Ksudo cat /etc/groups | grep krokodiles
+[?2004l
+cat: /etc/groups: No such file or directory
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo cat /etc/groups | grep krokodiles[1P
+[?2004l
+krokodiles:x:1002:krokodil,kroko
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ userdel [K[K[K[K[K[K[K[Ksudo userdel kroko
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo userdel kroko[K[Kkodile
+[?2004l
+userdel: user 'krokodile' does not exist
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo userdel krokodile[K
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo userdel krokodil[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgriu[K[Koups [K[Kdel k[Kkrokodiles
+[?2004l
+groupdel: cannot remove the primary group of user 'kroko1'
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo groupdel krokodiles[3Puserdel krokodile[Kcat /etc/group | grep krokodiles[1@s[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgroups[Ksudo cat /etc/groups | grep krokodiles[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Puserdel kroko1
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo userdel kroko1groupdel krokodiles
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ go[K[Kgroups[K[K[K[K[K[Ksudo[K[K[K[Ksudo[K[K[K[Kuser[K[K[K[Ksuod[K[Kdo useradd kroko1[C[C[C[C[C[C
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo useradd kroko1[K2
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo useradd kroko2[K3
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ su kroko3[K[K[K[K[K[K[K[K[Ksudo [K[K[K[K[Kgroups [K[K[K[K[K[K[Ksudo [K[K[K[K[Ksudo [K[K[K[K[Ksudo u[Kusermod -aG wheel kroko3
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ su kroko3
+[?2004l
+Password: 
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ passwd kroko1
+[?2004l
+passwd: You may not view or modify password information for kroko1.
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ passwd kroko1[1@s[1@u[1@d[1@ [1@o[1P[1P[1@o[1@ 
+[?2004l
+New password: 
+Retype new password: 
+passwd: password updated successfully
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo passwd kroko1[K2
+[?2004l
+New password: 
+Retype new password: 
+passwd: password updated successfully
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo passwd kroko2[K3
+[?2004l
+New password: 
+Retype new password: 
+passwd: password updated successfully
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo [K[K[K[K[Ksu[K[Ksudo [K[K[K[K[Ksu kroko3
+[?2004l
+Password: 
+]0;kroko3@c0rishost:/home/c0ris[?2004h[kroko3@c0rishost c0ris]$ sudo su
+[?2004l
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for kroko3: 
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# sudo groupadd stud[K[K[K[KStudents
+[?2004l
+groupadd: 'Students' is not a valid group name
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# sudo groupadd Students[1Ptudentsstudents[C[C[C[C[C[C[C
+[?2004l
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# su[K[Ksudo usermodd -[K[K[K -aG kroko1 students[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kstudents kroko1 kroko2
+[?2004l
+Usage: usermod [options] LOGIN
+
+Options:
+  -b, --badnames                allow bad names
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -r, --remove                  remove the user from only the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# sudo usermod -aG students kroko1 kroko2[1P[1P[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@G[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K
+[?2004l
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# sudo usermod -aG students kroko1[K2
+[?2004l
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# groups
+[?2004l
+root
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# grousp [K[K[K[K[K[K[Ksudo [K[K[K[K[Kcat [K[K[K[Kcat /etc/passwd[K[K[K[K[K[Kgroup students | grep kro[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K| grep sd[Ktudents
+[?2004l
+students:x:1004:kroko1,kroko2
+]0;root@c0rishost:/home/c0ris[?2004h[root@c0rishost c0ris]# [?2004l
+
+exit
+]0;kroko3@c0rishost:/home/c0ris[?2004h[kroko3@c0rishost c0ris]$ [?2004l
+
+exit
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ pass[K[K[K[Kkro[K[K[Ksu kroko1
+[?2004l
+Password: 
+]0;kroko1@c0rishost:/home/c0ris[?2004h[kroko1@c0rishost c0ris]$ passw[K[K[K[K[Ka[Kpasswd
+[?2004l
+Changing password for kroko1.
+Current password: 
+New password: 
+Retype new password: 
+passwd: password updated successfully
+]0;kroko1@c0rishost:/home/c0ris[?2004h[kroko1@c0rishost c0ris]$ [?2004l
+
+exit
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ su kroko2
+[?2004l
+Password: 
+]0;kroko2@c0rishost:/home/c0ris[?2004h[kroko2@c0rishost c0ris]$ ls /[K/root/[K
+[?2004l
+ls: cannot open directory '/root': Permission denied
+]0;kroko2@c0rishost:/home/c0ris[?2004h[kroko2@c0rishost c0ris]$ [?2004l
+
+exit
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sud[K[K[Ksudo mkdir test
+[?2004l
+[sudo] password for c0ris: 
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chgrp [K[K[K[Kgrp[Kp
+[?2004l
+chgrp: missing operand
+Try 'chgrp --help' for more information.
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chgrp test [K[K[K[K[Ktest[K[K[K[Ktest group[K[K[K[K[K[K students
+[?2004l
+chgrp: invalid group: ‘test’
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chgrp test students[1Pstudents[1Pstudents[1Ptudents[1Pstudents[1Pstudents[Cstudentststudentsystudentsdstudents[1Pstudents[1Pstudentsustudentsdstudentsestudentsnstudentststudents[Cstudents students[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[Kgr[K[K[K test
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chgrp students test[1@-[1@R[1@ 
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ cd [K[K[Kcd stu[K[K[Ke[Ktest/
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ls
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ rm[K[Ksu kroko1
+[?2004l
+Password: 
+su: Authentication failure
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ su kroko1
+[?2004l
+Password: 
+su: Authentication failure
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ su kroko1
+[?2004l
+Password: 
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ nano
+[?2004l
+bash: nano: command not found
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ s[Kvim [K schedule
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H[97m[41mE303: Unable to open swap file for "schedule", recovery impossible[?1000l[?1000h[m
+"schedule" [New][28;17H[K[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[?1000l[28;1H
+[38;5;121mPress ENTER or type command to continue[?25h[?12$p[?1002h[?25l[m[43C:[1;1H[28;1H[K[28;1H:[?25h [?25l[1;1H[L[2;1H[94m~                                                                                                             [3;1H~                                                                                                             [4;1H~                                                                                                             [5;1H~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;1H[K[28;93H0,0-1[9CAll[1;1H[?25h[?25l[28;83Hi[1;1H[28;83H [1;1H[28;1H[1m-- INSERT --[m[28;93H[K[28;93H0,1[11CAll[1;1H[?25h[?25l1[28;93H1,2[1;2H[?25h[?25l0[28;95H3[1;3H[?25h[?25l:[28;95H4[1;4H[?25h[?25l[28;95H5[1;5H[?25h[?25l0[28;95H6[1;6H[?25h[?25l0[28;95H7[1;7H[?25h[?25l[1;6H[K[28;95H6[1;6H[?25h[?25l[1;5H[K[28;95H5[1;5H[?25h[?25l[28;95H4[1;4H[?25h[?25l0[28;95H5[1;5H[?25h[?25l0[28;95H6[1;6H[?25h[?25l[28;95H7[1;7H[?25h[?25lM[28;95H8[1;8H[?25h[?25la[28;95H9[1;9H[?25h[?25lt[28;95H10[1;10H[?25h[?25lh[28;96H1[1;11H[?25h[?25l[2;1H[K[28;93H2,1 [2;1H[?25h[?25l1[28;95H2[2;2H[?25h[?25l1[28;95H3[2;3H[?25h[?25l:[28;95H4[2;4H[?25h[?25l4[28;95H5[2;5H[?25h[?25l0[28;95H6[2;6H[?25h[?25l[28;95H7[2;7H[?25h[?25lP[28;95H8[2;8H[?25h[?25lh[28;95H9[2;9H[?25h[?25ly[28;95H10[2;10H[?25h[?25ls[28;96H1[2;11H[?25h[?25li[28;96H2[2;12H[?25h[?25lc[28;96H3[2;13H[?25h[?25ls[28;96H4[2;14H[?25h[?25l[3;1H[K[28;93H3,1 [3;1H[?25h[?25l[28;95H2-9[3;9H[?25h[?25l[28;95H1  [3;1H[?25h[?25l1[28;95H2[3;2H[?25h[?25l3[28;95H3[3;3H[?25h[?25l;[28;95H4[3;4H[?25h[?25l[3;3H[K[28;95H3[3;3H[?25h[?25l:[28;95H4[3;4H[?25h[?25l3[28;95H5[3;5H[?25h[?25l0[28;95H6[3;6H[?25h[?25l[28;95H7[3;7H[?25h[?25lE[28;95H8[3;8H[?25h[?25lc[28;95H9[3;9H[?25h[?25lo[28;95H10[3;10H[?25h[?25ln[28;96H1[3;11H[?25h[?25lo[28;96H2[3;12H[?25h[?25lm[28;96H3[3;13H[?25h[?25li[28;96H4[3;14H[?25h[?25lc[28;96H5[3;15H[?25h[?25ls[28;96H6[3;16H[?25h[?25l[4;1H[K[28;93H4,1 [4;1H[?25h[?25l1[28;95H2[4;2H[?25h[?25l5[28;95H3[4;3H[?25h[?25l:[28;95H4[4;4H[?25h[?25l2[28;95H5[4;5H[?25h[?25l0[28;95H6[4;6H[?25h[?25l[28;95H7[4;7H[?25h[?25lP[28;95H8[4;8H[?25h[?25lr[28;95H9[4;9H[?25h[?25lo[28;95H10[4;10H[?25h[?25lg[28;96H1[4;11H[?25h[?25lr[28;96H2[4;12H[?25h[?25la[28;96H3[4;13H[?25h[?25lm[28;96H4[4;14H[?25h[?25li[28;96H5[4;15H[?25h[?25l[4;14H[K[28;96H4[4;14H[?25h[?25lm[28;96H5[4;15H[?25h[?25li[28;96H6[4;16H[?25h[?25ln[28;96H7[4;17H[?25h[?25lg[28;96H8[4;18H[?25h[28;1H[K[4;17H[?25l[28;83H^[[4;17H[28;83H  [4;18H[28;93H4,17[10CAll[4;17H[?25h[?25l[28;83H:[4;17H[28;83H[K[28;1H:[?25hw
+[?25l"schedule"
+
+[97m[41m"schedule" E212: Can't open file for writing[?1002l[m
+
+[38;5;121mPress ENTER or type command to continue[?25h[?1002h[?25l[4;17H[m[28;83H:[4;17H[28;1H[K[28;1H:[?25hq
+[?25l[97m[41mE37: No write since last change (add ! to override)[?1002l[m
+
+[38;5;121mPress ENTER or type command to continue[?25h[?1002h[?25l[4;17H[m[28;83H:[4;17H[28;1H[K[28;1H:[?25hq!
+[?25l[?1002l[?2004l[>4;m[23;2t[23;1t[28;1H[K[28;1H[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ ls
+[?2004l
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ [?2004l
+
+exit
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ls
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ cd ..
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sud[K[K[Ksudo ch[K[K[K[K[K[K[Kls -l[K[K[K[K[Kchmod -[Kg+rwm[Kx [1@s[1@u[1@d[1@o[1@ [C[C[C[C[C[C[C[C[C[C[C[Ctest/[K
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chmod g+rwx test[1P[1@o[C[C[C[C[1P testx test
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chmod o+rwx test[1P[1@u
+[?2004l
+]0;c0ris@c0rishost:~[?2004h[c0ris@c0rishost ~]$ sudo chmod u+rwx test[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo chmod o+rwx test[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kte[K[Kcd test/
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ su kroko1
+[?2004l
+Password: 
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ n[Kvim schedule
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H[97m[41mE303: Unable to open swap file for "schedule", recovery impossible[?1000l[?1000h[m
+"schedule" [New][28;17H[K[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[?1000l[28;1H
+[38;5;121mPress ENTER or type command to continue[?25h[?12$p[?1002h[m[1;1H[L[?25l[2;1H[94m~                                                                                                             [3;1H~                                                                                                             [4;1H~                                                                                                             [5;1H~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;1H[K[28;93H0,0-1[9CAll[1;1H[?25h[?25l[28;83Hi[1;1H[28;83H [1;1H[28;1H[1m-- INSERT --[m[28;93H[K[28;93H0,1[11CAll[1;1H[?25h[28;1H[K[1;1H[?25l[28;83H^[[1;1H[28;83H  [1;1H[28;93H0,0-1[9CAll[1;1H[?25h[?25l[28;83H:[1;1H[28;83H[K[28;1H:[?25hw
+[?25l"schedule" [New] 0L, 0B written[1;1H[28;93H0,0-1[9CAll[28;93H[K[28;93H0,0-1[9CAll[1;1H[?25h[?25l[28;83Hi[1;1H[28;83H [1;1H[28;1H[1m-- INSERT --[m[28;13H[K[28;93H0,1[11CAll[1;1H[?25h[?25l1[28;93H1,2[1;2H[?25h[?25l0[28;95H3[1;3H[?25h[?25l:[28;95H4[1;4H[?25h[?25l0[28;95H5[1;5H[?25h[?25l0[28;95H6[1;6H[?25h[?25l[28;95H7[1;7H[?25h[?25lM[28;95H8[1;8H[?25h[?25la[28;95H9[1;9H[?25h[?25lt[28;95H10[1;10H[?25h[?25lh[28;96H1[1;11H[?25h[?25l[2;1H[K[28;93H2,1 [2;1H[?25h[?25l1[28;95H2[2;2H[?25h[?25l1[28;95H3[2;3H[?25h[?25l:[28;95H4[2;4H[?25h[?25l4[28;95H5[2;5H[?25h[?25l0[28;95H6[2;6H[?25h[?25l[28;95H7[2;7H[?25h[?25lP[28;95H8[2;8H[?25h[?25lh[28;95H9[2;9H[?25h[?25ly[28;95H10[2;10H[?25h[?25ls[28;96H1[2;11H[?25h[?25li[28;96H2[2;12H[?25h[?25lc[28;96H3[2;13H[?25h[?25ls[28;96H4[2;14H[?25h[?25l[3;1H[K[28;93H3,1 [3;1H[?25h[?25l1[28;95H2[3;2H[?25h[?25l3[28;95H3[3;3H[?25h[?25l:[28;95H4[3;4H[?25h[?25l3[28;95H5[3;5H[?25h[?25l0[28;95H6[3;6H[?25h[?25l[28;95H7[3;7H[?25h[?25lE[28;95H8[3;8H[?25h[?25lc[28;95H9[3;9H[?25h[?25lo[28;95H10[3;10H[?25h[?25ln[28;96H1[3;11H[?25h[?25lo[28;96H2[3;12H[?25h[?25lm[28;96H3[3;13H[?25h[?25li[28;96H4[3;14H[?25h[?25lc[28;96H5[3;15H[?25h[?25ls[28;96H6[3;16H[?25h[?25l[4;1H[K[28;93H4,1 [4;1H[?25h[?25l1[28;95H2[4;2H[?25h[?25l5[28;95H3[4;3H[?25h[?25l:[28;95H4[4;4H[?25h[?25l2[28;95H5[4;5H[?25h[?25l0[28;95H6[4;6H[?25h[?25l[28;95H7[4;7H[?25h[?25lP[28;95H8[4;8H[?25h[?25lr[28;95H9[4;9H[?25h[?25lo[28;95H10[4;10H[?25h[?25lg[28;96H1[4;11H[?25h[?25lr[28;96H2[4;12H[?25h[?25la[28;96H3[4;13H[?25h[?25lm[28;96H4[4;14H[?25h[?25lm[28;96H5[4;15H[?25h[?25li[28;96H6[4;16H[?25h[?25ln[28;96H7[4;17H[?25h[?25lg[28;96H8[4;18H[?25h[?25l[5;1H[K[28;93H5,1 [5;1H[?25h[?25l[94m~                                                                                                             [m[28;93H4,18[4;18H[?25h[28;1H[K[4;17H[?25l[28;83H^[[4;17H[28;83H  [4;18H[28;93H4,17[10CAll[4;17H[?25h[?25l[28;83H:[4;17H[28;83H[K[28;1H:[?25hwq
+[?25l[?1002l[?2004l[>4;m"schedule"
+
+
+[97m[41m"schedule" E510: Can't make backup file (add ! to write anyway)[?2004h[>4;2m[?1002h[?1002l[m
+
+[38;5;121mPress ENTER or type command to continue[?25h[?1002h[?25l[4;17H[m[28;83H:[4;17H[28;1H[K[28;1H:[?25hwq!
+[?25l[?1002l[?2004l[>4;m"schedule" 4L, 59B written
+[23;2t[23;1t
+
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ l[Kcat schedule 
+[?2004l
+10:00 Math
+11:40 Physics
+13:30 Economics
+15:20 Programming
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ ch[K[Kchro[Kg[K[K[K[Ksudo chgrp students schedule
+[?2004l
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for kroko1: 
+kroko1 is not in the sudoers file.
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ sudo chgrp students schedule[1P[1P[1P[1P[1P
+[?2004l
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ su kroko2
+[?2004l
+Password: 
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ n[Kvim schedule 
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H"schedule" [readonly] 4L, 59B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H10:00 Math
+11:40 Physics[2;14H[K[3;1H13:30 Economics[3;16H[K[4;1H15:20 Programming
+[94m~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;93H1,1[11CAll[1;1H[?25h[?1000l[?1002h[?12$p[?25l[28;83H/[1;1H[28;84H2[1;1H[28;85H6[1;1H[28;86H2[1;1H[28;87H6[1;1H[28;88H/[1;1H[28;89H2[1;1H[28;90H7[1;1H[28;91H2[1;1H[28;92H7[1;1H[28;83H          [1;1H[?25h[?25l[28;83Hj[1;1H[28;83H [2;1H[28;93H2[2;1H[?25h[?25l[28;83Hj[2;1H[28;83H [3;1H[28;93H3[3;1H[?25h[?25l[28;83Hj[3;1H[28;83H [4;1H[28;93H4[4;1H[?25h[?25l[28;83H^[[4;1H[28;83H  [4;1H[28;83H^[[4;1H[28;83H  [4;1H[?25h[?25l[28;83Hk[4;1H[28;83H [3;1H[28;93H3[3;1H[?25h[?25l[28;83Hk[3;1H[28;83H [2;1H[28;93H2[2;1H[?25h[?25l[28;83Hj[2;1H[28;83H [3;1H[28;93H3[3;1H[?25h[?25l[28;83Hj[3;1H[28;83H [4;1H[28;93H4[4;1H[?25h[?25l[28;83H:[4;1H[28;1H[K[28;1H:[?25hq
+[?25l[?1002l[?2004l[>4;m[23;2t[23;1t[28;1H[K[28;1H[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ ls -l 
+[?2004l
+total 4
+-rw-r--r-- 1 kroko1 students 59 Nov  7 22:35 schedule
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ chmod +x[Kx[Kwx[K[K[Kr2[K[Kg[Kg+rwx [K[Kx schedule 
+[?2004l
+chmod: changing permissions of 'schedule': Operation not permitted
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ chmod g+rwx schedule [1@s[1@u[1@d[1@o[1@ [1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[?2004l
+
+exit
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ su kroko2[K[K[K[K[K[K[K[K[Kchmod +[Kg+rwx schedule
+[?2004l
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ chmod g+rwx schedule[11Psu kroko2[K2
+[?2004l
+Password: 
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ vim schedule 
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H[97m[41mE303: Unable to open swap file for "schedule", recovery impossible[?1000l[?1000h[m
+"schedule" [28;12H[K[28;12H4L, 59B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[?1000l[28;1H
+[38;5;121mPress ENTER or type command to continue[?25h[?12$p[?1002h[m[1;1H[L[?25l[1;1H10:00 Math
+11:40 Physics[2;14H[K[3;1H13:30 Economics[3;16H[K[4;1H15:20 Programming
+[94m~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;1H[K[28;93H1,1[11CAll[1;1H[?25h[?25l[28;83Hj[1;1H[28;83H [2;1H[28;93H2[2;1H[?25h[?25l[28;83Hj[2;1H[28;83H [3;1H[28;93H3[3;1H[?25h[?25l[28;83Hj[3;1H[28;83H [4;1H[28;93H4[4;1H[?25h[?25l[28;83HA[4;1H[28;83H [4;18H[28;1H[1m-- INSERT --[m[28;93H[K[28;93H4,18[10CAll[4;18H[?25h[?25l[5;1H[K[28;93H5,1 [5;1H[?25h[?25lD[28;95H2[5;2H[?25h[?25l[5;1H[K[28;95H1[5;1H[?25h[?25l[28;1H[97m[41mE211: File "schedule" no longer available[m[28;93H[K[?1002l[?1002h[5;1H[?25h[?25l1[28;93H5,2[11CAll[5;2H[?25h[?25l7[28;95H3[5;3H[?25h[?25l:[28;95H4[5;4H[?25h[?25l0[28;95H5[5;5H[?25h[?25l0[28;95H6[5;6H[?25h[?25l[28;95H7[5;7H[?25h[?25lD[28;95H8[5;8H[?25h[?25la[28;95H9[5;9H[?25h[?25lt[28;95H10[5;10H[?25h[?25la[28;96H1[5;11H[?25h[?25lb[28;96H2[5;12H[?25h[?25la[28;96H3[5;13H[?25h[?25ls[28;96H4[5;14H[?25h[?25le[28;96H5[5;15H[?25h[?25ls[28;96H6[5;16H[?25h[28;1H[K[5;15H[?25l[28;83H^[[5;15H[28;83H  [5;16H[28;93H5,15[10CAll[5;15H[?25h[?25l[28;83H:[5;15H[28;83H[K[28;1H:[?25hwq
+[?25l[?1002l[?2004l[>4;m"schedule"
+
+
+[97m[41m"schedule" E509: Cannot create backup file (add ! to override)[?2004h[>4;2m[?1002h[?1002l[m
+
+[38;5;121mPress ENTER or type command to continue[?25h[?1002h[?25l[5;15H[m[28;83H:[5;15H[28;1H[K[28;1H:[?25hwq!
+[?25l[?1002l[?2004l[>4;m"schedule" 5L, 75B written
+[23;2t[23;1t
+
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ cat schedule 
+[?2004l
+10:00 Math
+11:40 Physics
+13:30 Economics
+15:20 Programming
+17:00 Databases
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ sudo[K[K[K[K[?2004l
+
+exit
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ su kroko3
+[?2004l
+Password: 
+]0;kroko3@c0rishost:/home/c0ris/test[?2004h[kroko3@c0rishost test]$ echo "All Stu[K[K[Kstudens [K[Kts [K need to be in recreation area in[K[K[Kat [K[K[K at 18:00! Sing [K[K[K[Kgn [K[K[Kign below if you got this 
+ message." > important
+[?2004l
+]0;kroko3@c0rishost:/home/c0ris/test[?2004h[kroko3@c0rishost test]$ chmod +x [K[K[Ku+rwx important
+[?2004l
+]0;kroko3@c0rishost:/home/c0ris/test[?2004h[kroko3@c0rishost test]$ chmod u+rwx important[1P[1@o[1P[1@o
+[?2004l
+]0;kroko3@c0rishost:/home/c0ris/test[?2004h[kroko3@c0rishost test]$ ls -la 
+[?2004l
+total 16
+drwxrwxrwx  2 root   students 4096 Nov  7 22:39 .
+drwx------ 15 c0ris  c0ris    4096 Nov  7 22:28 ..
+-rwxr--rwx  1 kroko3 kroko3     89 Nov  7 22:39 important
+-rw-rwxr--  1 kroko1 students   75 Nov  7 22:37 schedule
+]0;kroko3@c0rishost:/home/c0ris/test[?2004h[kroko3@c0rishost test]$ [?2004l
+
+exit
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ k[Kvim important 
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H[97m[41mE303: Unable to open swap file for "important", recovery impossible[?1000l[?1000h[m
+"important" [28;13H[K[28;13H1L, 89B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[?1000l[28;1H
+[38;5;121mPress ENTER or type command to continue[?25h[?12$p[?1002h[m[1;1H[L[?25l[1;1HAll students need to be in recreation area at 18:00! Sign below if you got this message.
+[94m~                                                                                                             [3;1H~                                                                                                             [4;1H~                                                                                                             [5;1H~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;1H[K[28;93H1,1[11CAll[1;1H[?25h[?25l[28;83HA[1;1H[28;83H [1;89H[28;1H[1m-- INSERT --[m[28;93H[K[28;93H1,89[10CAll[1;89H[?25h[?25l[2;1H[K[28;93H2,1 [2;1H[?25h[?25l-[28;95H2[2;2H[?25h[?25lk[28;95H3[2;3H[?25h[?25l[2;2H[K[28;95H2[2;2H[?25h[?25lK[28;95H3[2;3H[?25h[?25lr[28;95H4[2;4H[?25h[?25lo[28;95H5[2;5H[?25h[?25lk[28;95H6[2;6H[?25h[?25lo[28;95H7[2;7H[?25h[?25ld[28;95H8[2;8H[?25h[?25li[28;95H9[2;9H[?25h[?25ll[28;95H10[2;10H[?25h[?25le[28;96H1[2;11H[?25h[?25l1[28;96H2[2;12H[?25h[28;1H[K[2;11H[?25l[28;83H^[[2;11H[28;83H  [2;12H[28;93H2,11[10CAll[2;11H[?25h[?25l[28;83H:[2;11H[28;83H[K[28;1H:[?25hwq!
+[?25l[?1002l[?2004l[>4;m"important" 2L, 101B written
+[23;2t[23;1t
+
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ su k[K[K[K[Kcat important 
+[?2004l
+All students need to be in recreation area at 18:00! Sign below if you got this message.
+-Krokodile1
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ su kroko2
+[?2004l
+Password: 
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ vim important
+[?2004l
+[?1000h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H[97m[41mE303: Unable to open swap file for "important", recovery impossible[?1000l[?1000h[m
+"important" [28;13H[K[28;13H2L, 101B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[?1000l[28;1H
+[38;5;121mPress ENTER or type command to continue[?1000h[m[1;1H[L[1;1HAll students need to be in recreation area at 18:00! Sign below if you got this message.
+-Krokodile1[2;12H[K[3;1H[94m~                                                                                                             [4;1H~                                                                                                             [5;1H~                                                                                                             [6;1H~                                                                                                             [7;1H~                                                                                                             [8;1H~                                                                                                             [9;1H~                                                                                                             [10;1H~                                                                                                             [11;1H~                                                                                                             [12;1H~                                                                                                             [13;1H~                                                                                                             [14;1H~                                                                                                             [15;1H~                                                                                                             [16;1H~                                                                                                             [17;1H~                                                                                                             [18;1H~                                                                                                             [19;1H~                                                                                                             [20;1H~                                                                                                             [21;1H~                                                                                                             [22;1H~                                                                                                             [23;1H~                                                                                                             [24;1H~                                                                                                             [25;1H~                                                                                                             [26;1H~                                                                                                             [27;1H~                                                                                                             [m[28;1H[K[28;93H1,1[11CAll[1;1H[?25h[?1000l[?1002h[?12$p[?25l[28;83H3[1;1H[28;84H/[1;1H[28;85H2[1;1H[28;86H6[1;1H[28;87H2[1;1H[28;88H6[1;1H[28;89H/[1;1H[28;90H2[1;1H[28;91H7[1;1H[28;92H2[1;1H[28;83H          [1;1H[?25h[?25l[28;83Hj[1;1H[28;83H [2;1H[28;93H2[2;1H[?25h[?25l[28;83HA[2;1H[28;83H [2;12H[28;1H[1m-- INSERT --[m[28;93H[K[28;93H2,12[10CAll[2;12H[?25h[?25l[3;1H[K[28;93H3,1 [3;1H[?25h[?25l-[28;95H2[3;2H[?25h[?25lK[28;95H3[3;3H[?25h[?25lr[28;95H4[3;4H[?25h[?25lo[28;95H5[3;5H[?25h[?25ld[28;95H6[3;6H[?25h[?25l[3;5H[K[28;95H5[3;5H[?25h[?25lk[28;95H6[3;6H[?25h[?25lo[28;95H7[3;7H[?25h[?25ld[28;95H8[3;8H[?25h[?25li[28;95H9[3;9H[?25h[?25ll[28;95H10[3;10H[?25h[?25le[28;96H1[3;11H[?25h[?25l2[28;96H2[3;12H[?25h[28;1H[K[3;11H[?25l[28;83H^[[3;11H[28;83H  [3;12H[28;93H3,11[10CAll[3;11H[?25h[?25l[28;83H:[3;11H[28;83H[K[28;1H:[?25hwq
+[?25l[?1002l[?2004l[>4;m"important"
+
+
+[97m[41m"important" E509: Cannot create backup file (add ! to override)[?2004h[>4;2m[?1002h[?1002l[m
+
+[38;5;121mPress ENTER or type command to continue[?25h[?1002h[?25l[3;11H[m[1;1H[2L[1;1HAll students need to be in recreation area at 18:00! Sign below if you got this message.
+-Krokodile1[28;1H[K[28;93H3,11[10CAll[3;11H[?25h[?25l[28;83H:[3;11H[28;83H[K[28;1H:[?25hwq!
+[?25l[?1002l[?2004l[>4;m"important" 3L, 113B written
+[23;2t[23;1t
+
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ cat impr[Kortant 
+[?2004l
+All students need to be in recreation area at 18:00! Sign below if you got this message.
+-Krokodile1
+-Krokodile2
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ echo > [K[K"All personal! University [K[K[Kty sil[K[K[Kwill be closed too[Kmorrow!> [K[K" > very_important[Kt
+[?2004l
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ ls -la
+[?2004l
+total 20
+drwxrwxrwx  2 root   students 4096 Nov  7 22:42 .
+drwx------ 15 c0ris  c0ris    4096 Nov  7 22:28 ..
+-rwxr--rwx  1 kroko3 kroko3    113 Nov  7 22:41 important
+-rw-rwxr--  1 kroko1 students   75 Nov  7 22:37 schedule
+-rw-r--r--  1 kroko2 kroko2     50 Nov  7 22:42 very_important
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ p[Kps -u roo [Kt | proc_li[K[K[K[K[K[K[K.[K[K[K../rp[K[K[K[K[K| r[K../proc_list
+[?2004l
+bash: ../proc_list: Permission denied
+]0;kroko2@c0rishost:/home/c0ris/test[?2004h[kroko2@c0rishost test]$ ps -u root | ../proc_list[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[?2004l
+
+exit
+]0;kroko1@c0rishost:/home/c0ris/test[?2004h[kroko1@c0rishost test]$ [?2004l
+
+exit
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ su kroko1[1Pcd test/[K[K[K[K[K[K[K[Kps -u root | ../rp[K[Kproc_list
+[?2004l
+bash: ../proc_list: No such file or directory
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ps -u root | ../proc_list[1P ../proc_list> ../proc_list
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ kill -9 1
+[?2004l
+bash: kill: (1) - Operation not permitted
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ fr[Kirefox
+[?2004l
+^Z
+[1]+  Stopped                 firefox
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ pstree firefox[K[K[K[K[K[K[K[K
+[?2004l
+systemd─┬─NetworkManager───2*[{NetworkManager}]
+        ├─dbus-daemon
+        ├─dhcpcd─┬─dhcpcd───dhcpcd
+        │        └─2*[dhcpcd]
+        ├─kwalletd5───12*[{kwalletd5}]
+        ├─polkitd───2*[{polkitd}]
+        ├─rtkit-daemon───2*[{rtkit-daemon}]
+        ├─sddm─┬─Xorg───{Xorg}
+        │      ├─sddm-helper───startplasma-way───{startplasma-way}
+        │      └─{sddm}
+        ├─systemd─┬─(sd-pam)
+        │         ├─DiscoverNotifie───13*[{DiscoverNotifie}]
+        │         ├─agent───2*[{agent}]
+        │         ├─akonadi_control─┬─akonadi_akonote───13*[{akonadi_akonote}]
+        │         │                 ├─akonadi_archive───14*[{akonadi_archive}]
+        │         │                 ├─akonadi_birthda───13*[{akonadi_birthda}]
+        │         │                 ├─akonadi_contact───13*[{akonadi_contact}]
+        │         │                 ├─akonadi_followu───14*[{akonadi_followu}]
+        │         │                 ├─akonadi_ical_re───13*[{akonadi_ical_re}]
+        │         │                 ├─akonadi_indexin───13*[{akonadi_indexin}]
+        │         │                 ├─akonadi_maildir───13*[{akonadi_maildir}]
+        │         │                 ├─akonadi_maildis───14*[{akonadi_maildis}]
+        │         │                 ├─akonadi_mailfil───14*[{akonadi_mailfil}]
+        │         │                 ├─akonadi_mailmer───14*[{akonadi_mailmer}]
+        │         │                 ├─akonadi_migrati───13*[{akonadi_migrati}]
+        │         │                 ├─akonadi_newmail───13*[{akonadi_newmail}]
+        │         │                 ├─akonadi_notes_a───15*[{akonadi_notes_a}]
+        │         │                 ├─akonadi_sendlat───14*[{akonadi_sendlat}]
+        │         │                 ├─akonadi_unified───13*[{akonadi_unified}]
+        │         │                 ├─akonadiserver─┬─mysqld───11*[{mysqld}]
+        │         │                 │               └─31*[{akonadiserver}]
+        │         │                 └─14*[{akonadi_control}]
+        │         ├─at-spi-bus-laun───3*[{at-spi-bus-laun}]
+        │         ├─baloo_file───2*[{baloo_file}]
+        │         ├─baloorunner───12*[{baloorunner}]
+        │         ├─dbus-daemon
+        │         ├─dconf-service───2*[{dconf-service}]
+        │         ├─gmenudbusmenupr───2*[{gmenudbusmenupr}]
+        │         ├─kaccess───11*[{kaccess}]
+        │         ├─kactivitymanage───6*[{kactivitymanage}]
+        │         ├─kalendarac───14*[{kalendarac}]
+        │         ├─kdeconnectd───13*[{kdeconnectd}]
+        │         ├─kded5───18*[{kded5}]
+        │         ├─2*[kioslave5]
+        │         ├─kmix───13*[{kmix}]
+        │         ├─krunner─┬─konsole─┬─bash───script───bash─┬─firefox─┬─Privileged Cont───20*[{Privileged Co+
+        │         │         │         │                      │         ├─Socket Process───5*[{Socket Process}+
+        │         │         │         │                      │         ├─3*[Web Content───10*[{Web Content}]]
+        │         │         │         │                      │         ├─WebExtensions───20*[{WebExtensions}]
+        │         │         │         │                      │         └─84*[{firefox}]
+        │         │         │         │                      └─pstree
+        │         │         │         └─12*[{konsole}]
+        │         │         └─23*[{krunner}]
+        │         ├─ksmserver───11*[{ksmserver}]
+        │         ├─kwin_wayland_wr─┬─kwin_wayland─┬─Xwayland
+        │         │                 │              └─16*[{kwin_wayland}]
+        │         │                 └─{kwin_wayland_wr}
+        │         ├─mission-control───3*[{mission-control}]
+        │         ├─obexd
+        │         ├─org_kde_powerde───6*[{org_kde_powerde}]
+        │         ├─pipewire───{pipewire}
+        │         ├─pipewire-media-───{pipewire-media-}
+        │         ├─plasmashell───24*[{plasmashell}]
+        │         ├─polkit-kde-auth───14*[{polkit-kde-auth}]
+        │         ├─pulseaudio─┬─gsettings-helpe───3*[{gsettings-helpe}]
+        │         │            └─2*[{pulseaudio}]
+        │         ├─xdg-desktop-por───5*[{xdg-desktop-por}]
+        │         ├─xdg-desktop-por───13*[{xdg-desktop-por}]
+        │         ├─xdg-document-po─┬─fusermount3
+        │         │                 └─5*[{xdg-document-po}]
+        │         ├─xdg-permission-───2*[{xdg-permission-}]
+        │         └─xembedsniproxy───2*[{xembedsniproxy}]
+        ├─systemd-journal
+        ├─systemd-logind
+        ├─systemd-udevd
+        ├─udisksd───4*[{udisksd}]
+        └─upowerd───2*[{upowerd}]
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ pstree -hp
+[?2004l
+[1msystemd(1)[0m─┬─NetworkManager(344)─┬─{NetworkManager}(350)
+           │                     ├─{NetworkManager}(352)
+           │                     └─{NetworkManager}(2264)
+           ├─dbus-daemon(328)
+           ├─dhcpcd(333)─┬─dhcpcd(334)───dhcpcd(417)
+           │             ├─dhcpcd(335)
+           │             └─dhcpcd(336)
+           ├─kwalletd5(447)─┬─{kwalletd5}(563)
+           │                ├─{kwalletd5}(567)
+           │                ├─{kwalletd5}(568)
+           │                ├─{kwalletd5}(571)
+           │                ├─{kwalletd5}(572)
+           │                ├─{kwalletd5}(573)
+           │                ├─{kwalletd5}(574)
+           │                ├─{kwalletd5}(575)
+           │                ├─{kwalletd5}(576)
+           │                ├─{kwalletd5}(577)
+           │                ├─{kwalletd5}(578)
+           │                └─{kwalletd5}(579)
+           ├─polkitd(498)─┬─{polkitd}(500)
+           │              └─{polkitd}(501)
+           ├─rtkit-daemon(512)─┬─{rtkit-daemon}(513)
+           │                   └─{rtkit-daemon}(514)
+           ├─sddm(364)─┬─Xorg(372)───{Xorg}(384)
+           │           ├─sddm-helper(434)───startplasma-way(448)───{startplasma-way}(451)
+           │           └─{sddm}(368)
+           ├─[1msystemd(436)[0m─┬─(sd-pam)(437)
+           │              ├─DiscoverNotifie(765)─┬─{DiscoverNotifie}(778)
+           │              │                      ├─{DiscoverNotifie}(788)
+           │              │                      ├─{DiscoverNotifie}(789)
+           │              │                      ├─{DiscoverNotifie}(802)
+           │              │                      ├─{DiscoverNotifie}(803)
+           │              │                      ├─{DiscoverNotifie}(804)
+           │              │                      ├─{DiscoverNotifie}(805)
+           │              │                      ├─{DiscoverNotifie}(806)
+           │              │                      ├─{DiscoverNotifie}(807)
+           │              │                      ├─{DiscoverNotifie}(808)
+           │              │                      ├─{DiscoverNotifie}(809)
+           │              │                      ├─{DiscoverNotifie}(810)
+           │              │                      └─{DiscoverNotifie}(866)
+           │              ├─agent(758)─┬─{agent}(772)
+           │              │            └─{agent}(774)
+           │              ├─akonadi_control(913)─┬─akonadi_akonote(982)─┬─{akonadi_akonote}(993)
+           │              │                      │                      ├─{akonadi_akonote}(1025)
+           │              │                      │                      ├─{akonadi_akonote}(1026)
+           │              │                      │                      ├─{akonadi_akonote}(1046)
+           │              │                      │                      ├─{akonadi_akonote}(1047)
+           │              │                      │                      ├─{akonadi_akonote}(1048)
+           │              │                      │                      ├─{akonadi_akonote}(1049)
+           │              │                      │                      ├─{akonadi_akonote}(1050)
+           │              │                      │                      ├─{akonadi_akonote}(1051)
+           │              │                      │                      ├─{akonadi_akonote}(1052)
+           │              │                      │                      ├─{akonadi_akonote}(1053)
+           │              │                      │                      ├─{akonadi_akonote}(1054)
+           │              │                      │                      └─{akonadi_akonote}(1056)
+           │              │                      ├─akonadi_archive(983)─┬─{akonadi_archive}(1187)
+           │              │                      │                      ├─{akonadi_archive}(1188)
+           │              │                      │                      ├─{akonadi_archive}(1189)
+           │              │                      │                      ├─{akonadi_archive}(1216)
+           │              │                      │                      ├─{akonadi_archive}(1217)
+           │              │                      │                      ├─{akonadi_archive}(1218)
+           │              │                      │                      ├─{akonadi_archive}(1219)
+           │              │                      │                      ├─{akonadi_archive}(1220)
+           │              │                      │                      ├─{akonadi_archive}(1221)
+           │              │                      │                      ├─{akonadi_archive}(1222)
+           │              │                      │                      ├─{akonadi_archive}(1223)
+           │              │                      │                      ├─{akonadi_archive}(1224)
+           │              │                      │                      ├─{akonadi_archive}(1227)
+           │              │                      │                      └─{akonadi_archive}(1267)
+           │              │                      ├─akonadi_birthda(984)─┬─{akonadi_birthda}(989)
+           │              │                      │                      ├─{akonadi_birthda}(994)
+           │              │                      │                      ├─{akonadi_birthda}(995)
+           │              │                      │                      ├─{akonadi_birthda}(1014)
+           │              │                      │                      ├─{akonadi_birthda}(1015)
+           │              │                      │                      ├─{akonadi_birthda}(1016)
+           │              │                      │                      ├─{akonadi_birthda}(1017)
+           │              │                      │                      ├─{akonadi_birthda}(1018)
+           │              │                      │                      ├─{akonadi_birthda}(1019)
+           │              │                      │                      ├─{akonadi_birthda}(1020)
+           │              │                      │                      ├─{akonadi_birthda}(1021)
+           │              │                      │                      ├─{akonadi_birthda}(1022)
+           │              │                      │                      └─{akonadi_birthda}(1029)
+           │              │                      ├─akonadi_contact(985)─┬─{akonadi_contact}(990)
+           │              │                      │                      ├─{akonadi_contact}(996)
+           │              │                      │                      ├─{akonadi_contact}(997)
+           │              │                      │                      ├─{akonadi_contact}(1001)
+           │              │                      │                      ├─{akonadi_contact}(1002)
+           │              │                      │                      ├─{akonadi_contact}(1003)
+           │              │                      │                      ├─{akonadi_contact}(1004)
+           │              │                      │                      ├─{akonadi_contact}(1005)
+           │              │                      │                      ├─{akonadi_contact}(1006)
+           │              │                      │                      ├─{akonadi_contact}(1007)
+           │              │                      │                      ├─{akonadi_contact}(1008)
+           │              │                      │                      ├─{akonadi_contact}(1009)
+           │              │                      │                      └─{akonadi_contact}(1012)
+           │              │                      ├─akonadi_followu(986)─┬─{akonadi_followu}(1010)
+           │              │                      │                      ├─{akonadi_followu}(1032)
+           │              │                      │                      ├─{akonadi_followu}(1033)
+           │              │                      │                      ├─{akonadi_followu}(1058)
+           │              │                      │                      ├─{akonadi_followu}(1059)
+           │              │                      │                      ├─{akonadi_followu}(1060)
+           │              │                      │                      ├─{akonadi_followu}(1061)
+           │              │                      │                      ├─{akonadi_followu}(1062)
+           │              │                      │                      ├─{akonadi_followu}(1063)
+           │              │                      │                      ├─{akonadi_followu}(1064)
+           │              │                      │                      ├─{akonadi_followu}(1065)
+           │              │                      │                      ├─{akonadi_followu}(1066)
+           │              │                      │                      ├─{akonadi_followu}(1070)
+           │              │                      │                      └─{akonadi_followu}(1114)
+           │              │                      ├─akonadi_ical_re(987)─┬─{akonadi_ical_re}(1011)
+           │              │                      │                      ├─{akonadi_ical_re}(1030)
+           │              │                      │                      ├─{akonadi_ical_re}(1031)
+           │              │                      │                      ├─{akonadi_ical_re}(1036)
+           │              │                      │                      ├─{akonadi_ical_re}(1037)
+           │              │                      │                      ├─{akonadi_ical_re}(1038)
+           │              │                      │                      ├─{akonadi_ical_re}(1039)
+           │              │                      │                      ├─{akonadi_ical_re}(1040)
+           │              │                      │                      ├─{akonadi_ical_re}(1041)
+           │              │                      │                      ├─{akonadi_ical_re}(1042)
+           │              │                      │                      ├─{akonadi_ical_re}(1043)
+           │              │                      │                      ├─{akonadi_ical_re}(1045)
+           │              │                      │                      └─{akonadi_ical_re}(1057)
+           │              │                      ├─akonadi_indexin(988)─┬─{akonadi_indexin}(1023)
+           │              │                      │                      ├─{akonadi_indexin}(1073)
+           │              │                      │                      ├─{akonadi_indexin}(1074)
+           │              │                      │                      ├─{akonadi_indexin}(1118)
+           │              │                      │                      ├─{akonadi_indexin}(1119)
+           │              │                      │                      ├─{akonadi_indexin}(1120)
+           │              │                      │                      ├─{akonadi_indexin}(1121)
+           │              │                      │                      ├─{akonadi_indexin}(1122)
+           │              │                      │                      ├─{akonadi_indexin}(1123)
+           │              │                      │                      ├─{akonadi_indexin}(1124)
+           │              │                      │                      ├─{akonadi_indexin}(1125)
+           │              │                      │                      ├─{akonadi_indexin}(1126)
+           │              │                      │                      └─{akonadi_indexin}(1137)
+           │              │                      ├─akonadi_maildir(991)─┬─{akonadi_maildir}(999)
+           │              │                      │                      ├─{akonadi_maildir}(1034)
+           │              │                      │                      ├─{akonadi_maildir}(1035)
+           │              │                      │                      ├─{akonadi_maildir}(1081)
+           │              │                      │                      ├─{akonadi_maildir}(1082)
+           │              │                      │                      ├─{akonadi_maildir}(1083)
+           │              │                      │                      ├─{akonadi_maildir}(1084)
+           │              │                      │                      ├─{akonadi_maildir}(1085)
+           │              │                      │                      ├─{akonadi_maildir}(1086)
+           │              │                      │                      ├─{akonadi_maildir}(1087)
+           │              │                      │                      ├─{akonadi_maildir}(1088)
+           │              │                      │                      ├─{akonadi_maildir}(1089)
+           │              │                      │                      └─{akonadi_maildir}(1106)
+           │              │                      ├─akonadi_maildis(992)─┬─{akonadi_maildis}(1024)
+           │              │                      │                      ├─{akonadi_maildis}(1077)
+           │              │                      │                      ├─{akonadi_maildis}(1078)
+           │              │                      │                      ├─{akonadi_maildis}(1128)
+           │              │                      │                      ├─{akonadi_maildis}(1129)
+           │              │                      │                      ├─{akonadi_maildis}(1130)
+           │              │                      │                      ├─{akonadi_maildis}(1131)
+           │              │                      │                      ├─{akonadi_maildis}(1132)
+           │              │                      │                      ├─{akonadi_maildis}(1133)
+           │              │                      │                      ├─{akonadi_maildis}(1134)
+           │              │                      │                      ├─{akonadi_maildis}(1135)
+           │              │                      │                      ├─{akonadi_maildis}(1136)
+           │              │                      │                      ├─{akonadi_maildis}(1148)
+           │              │                      │                      └─{akonadi_maildis}(1167)
+           │              │                      ├─akonadi_mailfil(998)─┬─{akonadi_mailfil}(1183)
+           │              │                      │                      ├─{akonadi_mailfil}(1185)
+           │              │                      │                      ├─{akonadi_mailfil}(1186)
+           │              │                      │                      ├─{akonadi_mailfil}(1199)
+           │              │                      │                      ├─{akonadi_mailfil}(1200)
+           │              │                      │                      ├─{akonadi_mailfil}(1201)
+           │              │                      │                      ├─{akonadi_mailfil}(1202)
+           │              │                      │                      ├─{akonadi_mailfil}(1203)
+           │              │                      │                      ├─{akonadi_mailfil}(1204)
+           │              │                      │                      ├─{akonadi_mailfil}(1205)
+           │              │                      │                      ├─{akonadi_mailfil}(1206)
+           │              │                      │                      ├─{akonadi_mailfil}(1207)
+           │              │                      │                      ├─{akonadi_mailfil}(1209)
+           │              │                      │                      └─{akonadi_mailfil}(1234)
+           │              │                      ├─akonadi_mailmer(1000)─┬─{akonadi_mailmer}(1055)
+           │              │                      │                       ├─{akonadi_mailmer}(1068)
+           │              │                      │                       ├─{akonadi_mailmer}(1069)
+           │              │                      │                       ├─{akonadi_mailmer}(1092)
+           │              │                      │                       ├─{akonadi_mailmer}(1093)
+           │              │                      │                       ├─{akonadi_mailmer}(1094)
+           │              │                      │                       ├─{akonadi_mailmer}(1095)
+           │              │                      │                       ├─{akonadi_mailmer}(1096)
+           │              │                      │                       ├─{akonadi_mailmer}(1097)
+           │              │                      │                       ├─{akonadi_mailmer}(1098)
+           │              │                      │                       ├─{akonadi_mailmer}(1099)
+           │              │                      │                       ├─{akonadi_mailmer}(1100)
+           │              │                      │                       ├─{akonadi_mailmer}(1127)
+           │              │                      │                       └─{akonadi_mailmer}(1168)
+           │              │                      ├─akonadi_migrati(1013)─┬─{akonadi_migrati}(1076)
+           │              │                      │                       ├─{akonadi_migrati}(1142)
+           │              │                      │                       ├─{akonadi_migrati}(1143)
+           │              │                      │                       ├─{akonadi_migrati}(1169)
+           │              │                      │                       ├─{akonadi_migrati}(1170)
+           │              │                      │                       ├─{akonadi_migrati}(1171)
+           │              │                      │                       ├─{akonadi_migrati}(1172)
+           │              │                      │                       ├─{akonadi_migrati}(1173)
+           │              │                      │                       ├─{akonadi_migrati}(1174)
+           │              │                      │                       ├─{akonadi_migrati}(1175)
+           │              │                      │                       ├─{akonadi_migrati}(1176)
+           │              │                      │                       ├─{akonadi_migrati}(1177)
+           │              │                      │                       └─{akonadi_migrati}(1181)
+           │              │                      ├─akonadi_newmail(1027)─┬─{akonadi_newmail}(1138)
+           │              │                      │                       ├─{akonadi_newmail}(1144)
+           │              │                      │                       ├─{akonadi_newmail}(1145)
+           │              │                      │                       ├─{akonadi_newmail}(1156)
+           │              │                      │                       ├─{akonadi_newmail}(1157)
+           │              │                      │                       ├─{akonadi_newmail}(1158)
+           │              │                      │                       ├─{akonadi_newmail}(1159)
+           │              │                      │                       ├─{akonadi_newmail}(1160)
+           │              │                      │                       ├─{akonadi_newmail}(1161)
+           │              │                      │                       ├─{akonadi_newmail}(1162)
+           │              │                      │                       ├─{akonadi_newmail}(1163)
+           │              │                      │                       ├─{akonadi_newmail}(1164)
+           │              │                      │                       └─{akonadi_newmail}(1178)
+           │              │                      ├─akonadi_notes_a(1028)─┬─{akonadi_notes_a}(1141)
+           │              │                      │                       ├─{akonadi_notes_a}(1154)
+           │              │                      │                       ├─{akonadi_notes_a}(1155)
+           │              │                      │                       ├─{akonadi_notes_a}(1190)
+           │              │                      │                       ├─{akonadi_notes_a}(1191)
+           │              │                      │                       ├─{akonadi_notes_a}(1192)
+           │              │                      │                       ├─{akonadi_notes_a}(1193)
+           │              │                      │                       ├─{akonadi_notes_a}(1194)
+           │              │                      │                       ├─{akonadi_notes_a}(1195)
+           │              │                      │                       ├─{akonadi_notes_a}(1196)
+           │              │                      │                       ├─{akonadi_notes_a}(1197)
+           │              │                      │                       ├─{akonadi_notes_a}(1198)
+           │              │                      │                       ├─{akonadi_notes_a}(1208)
+           │              │                      │                       ├─{akonadi_notes_a}(1238)
+           │              │                      │                       └─{akonadi_notes_a}(1241)
+           │              │                      ├─akonadi_sendlat(1044)─┬─{akonadi_sendlat}(1214)
+           │              │                      │                       ├─{akonadi_sendlat}(1228)
+           │              │                      │                       ├─{akonadi_sendlat}(1229)
+           │              │                      │                       ├─{akonadi_sendlat}(1252)
+           │              │                      │                       ├─{akonadi_sendlat}(1253)
+           │              │                      │                       ├─{akonadi_sendlat}(1254)
+           │              │                      │                       ├─{akonadi_sendlat}(1255)
+           │              │                      │                       ├─{akonadi_sendlat}(1256)
+           │              │                      │                       ├─{akonadi_sendlat}(1257)
+           │              │                      │                       ├─{akonadi_sendlat}(1258)
+           │              │                      │                       ├─{akonadi_sendlat}(1259)
+           │              │                      │                       ├─{akonadi_sendlat}(1260)
+           │              │                      │                       ├─{akonadi_sendlat}(1264)
+           │              │                      │                       └─{akonadi_sendlat}(1272)
+           │              │                      ├─akonadi_unified(1067)─┬─{akonadi_unified}(1215)
+           │              │                      │                       ├─{akonadi_unified}(1225)
+           │              │                      │                       ├─{akonadi_unified}(1226)
+           │              │                      │                       ├─{akonadi_unified}(1243)
+           │              │                      │                       ├─{akonadi_unified}(1244)
+           │              │                      │                       ├─{akonadi_unified}(1245)
+           │              │                      │                       ├─{akonadi_unified}(1246)
+           │              │                      │                       ├─{akonadi_unified}(1247)
+           │              │                      │                       ├─{akonadi_unified}(1248)
+           │              │                      │                       ├─{akonadi_unified}(1249)
+           │              │                      │                       ├─{akonadi_unified}(1250)
+           │              │                      │                       ├─{akonadi_unified}(1251)
+           │              │                      │                       └─{akonadi_unified}(1261)
+           │              │                      ├─akonadiserver(938)─┬─mysqld(944)─┬─{mysqld}(945)
+           │              │                      │                    │             ├─{mysqld}(946)
+           │              │                      │                    │             ├─{mysqld}(947)
+           │              │                      │                    │             ├─{mysqld}(948)
+           │              │                      │                    │             ├─{mysqld}(957)
+           │              │                      │                    │             ├─{mysqld}(958)
+           │              │                      │                    │             ├─{mysqld}(959)
+           │              │                      │                    │             ├─{mysqld}(960)
+           │              │                      │                    │             ├─{mysqld}(968)
+           │              │                      │                    │             ├─{mysqld}(980)
+           │              │                      │                    │             └─{mysqld}(1072)
+           │              │                      │                    ├─{akonadiserver}(942)
+           │              │                      │                    ├─{akonadiserver}(974)
+           │              │                      │                    ├─{akonadiserver}(975)
+           │              │                      │                    ├─{akonadiserver}(976)
+           │              │                      │                    ├─{akonadiserver}(977)
+           │              │                      │                    ├─{akonadiserver}(978)
+           │              │                      │                    ├─{akonadiserver}(979)
+           │              │                      │                    ├─{akonadiserver}(981)
+           │              │                      │                    ├─{akonadiserver}(1071)
+           │              │                      │                    ├─{akonadiserver}(1079)
+           │              │                      │                    ├─{akonadiserver}(1080)
+           │              │                      │                    ├─{akonadiserver}(1101)
+           │              │                      │                    ├─{akonadiserver}(1102)
+           │              │                      │                    ├─{akonadiserver}(1103)
+           │              │                      │                    ├─{akonadiserver}(1105)
+           │              │                      │                    ├─{akonadiserver}(1116)
+           │              │                      │                    ├─{akonadiserver}(1139)
+           │              │                      │                    ├─{akonadiserver}(1146)
+           │              │                      │                    ├─{akonadiserver}(1149)
+           │              │                      │                    ├─{akonadiserver}(1179)
+           │              │                      │                    ├─{akonadiserver}(1182)
+           │              │                      │                    ├─{akonadiserver}(1210)
+           │              │                      │                    ├─{akonadiserver}(1212)
+           │              │                      │                    ├─{akonadiserver}(1235)
+           │              │                      │                    ├─{akonadiserver}(1236)
+           │              │                      │                    ├─{akonadiserver}(1240)
+           │              │                      │                    ├─{akonadiserver}(1262)
+           │              │                      │                    ├─{akonadiserver}(1265)
+           │              │                      │                    ├─{akonadiserver}(1268)
+           │              │                      │                    ├─{akonadiserver}(1307)
+           │              │                      │                    └─{akonadiserver}(1309)
+           │              │                      ├─{akonadi_control}(919)
+           │              │                      ├─{akonadi_control}(920)
+           │              │                      ├─{akonadi_control}(921)
+           │              │                      ├─{akonadi_control}(929)
+           │              │                      ├─{akonadi_control}(930)
+           │              │                      ├─{akonadi_control}(931)
+           │              │                      ├─{akonadi_control}(932)
+           │              │                      ├─{akonadi_control}(933)
+           │              │                      ├─{akonadi_control}(934)
+           │              │                      ├─{akonadi_control}(935)
+           │              │                      ├─{akonadi_control}(936)
+           │              │                      ├─{akonadi_control}(937)
+           │              │                      ├─{akonadi_control}(939)
+           │              │                      └─{akonadi_control}(940)
+           │              ├─at-spi-bus-laun(2077)─┬─{at-spi-bus-laun}(2079)
+           │              │                       ├─{at-spi-bus-laun}(2080)
+           │              │                       └─{at-spi-bus-laun}(2082)
+           │              ├─baloo_file(464)─┬─{baloo_file}(471)
+           │              │                 ├─{baloo_file}(475)
+           │              │                 └─{baloo_file}(2255)
+           │              ├─baloorunner(1440)─┬─{baloorunner}(1444)
+           │              │                   ├─{baloorunner}(1446)
+           │              │                   ├─{baloorunner}(1447)
+           │              │                   ├─{baloorunner}(1448)
+           │              │                   ├─{baloorunner}(1449)
+           │              │                   ├─{baloorunner}(1450)
+           │              │                   ├─{baloorunner}(1451)
+           │              │                   ├─{baloorunner}(1452)
+           │              │                   ├─{baloorunner}(1453)
+           │              │                   ├─{baloorunner}(1454)
+           │              │                   ├─{baloorunner}(1455)
+           │              │                   └─{baloorunner}(1456)
+           │              ├─dbus-daemon(453)
+           │              ├─dconf-service(607)─┬─{dconf-service}(618)
+           │              │                    └─{dconf-service}(619)
+           │              ├─gmenudbusmenupr(635)─┬─{gmenudbusmenupr}(640)
+           │              │                      └─{gmenudbusmenupr}(642)
+           │              ├─kaccess(759)─┬─{kaccess}(780)
+           │              │              ├─{kaccess}(786)
+           │              │              ├─{kaccess}(822)
+           │              │              ├─{kaccess}(823)
+           │              │              ├─{kaccess}(824)
+           │              │              ├─{kaccess}(825)
+           │              │              ├─{kaccess}(826)
+           │              │              ├─{kaccess}(827)
+           │              │              ├─{kaccess}(828)
+           │              │              ├─{kaccess}(829)
+           │              │              └─{kaccess}(830)
+           │              ├─kactivitymanage(622)─┬─{kactivitymanage}(625)
+           │              │                      ├─{kactivitymanage}(626)
+           │              │                      ├─{kactivitymanage}(627)
+           │              │                      ├─{kactivitymanage}(631)
+           │              │                      ├─{kactivitymanage}(633)
+           │              │                      └─{kactivitymanage}(634)
+           │              ├─kalendarac(766)─┬─{kalendarac}(811)
+           │              │                 ├─{kalendarac}(833)
+           │              │                 ├─{kalendarac}(834)
+           │              │                 ├─{kalendarac}(888)
+           │              │                 ├─{kalendarac}(889)
+           │              │                 ├─{kalendarac}(890)
+           │              │                 ├─{kalendarac}(891)
+           │              │                 ├─{kalendarac}(893)
+           │              │                 ├─{kalendarac}(894)
+           │              │                 ├─{kalendarac}(896)
+           │              │                 ├─{kalendarac}(897)
+           │              │                 ├─{kalendarac}(898)
+           │              │                 ├─{kalendarac}(910)
+           │              │                 └─{kalendarac}(914)
+           │              ├─kdeconnectd(751)─┬─{kdeconnectd}(782)
+           │              │                  ├─{kdeconnectd}(792)
+           │              │                  ├─{kdeconnectd}(793)
+           │              │                  ├─{kdeconnectd}(812)
+           │              │                  ├─{kdeconnectd}(813)
+           │              │                  ├─{kdeconnectd}(814)
+           │              │                  ├─{kdeconnectd}(815)
+           │              │                  ├─{kdeconnectd}(816)
+           │              │                  ├─{kdeconnectd}(817)
+           │              │                  ├─{kdeconnectd}(818)
+           │              │                  ├─{kdeconnectd}(819)
+           │              │                  ├─{kdeconnectd}(821)
+           │              │                  └─{kdeconnectd}(855)
+           │              ├─kded5(560)─┬─{kded5}(564)
+           │              │            ├─{kded5}(569)
+           │              │            ├─{kded5}(570)
+           │              │            ├─{kded5}(589)
+           │              │            ├─{kded5}(590)
+           │              │            ├─{kded5}(591)
+           │              │            ├─{kded5}(592)
+           │              │            ├─{kded5}(593)
+           │              │            ├─{kded5}(594)
+           │              │            ├─{kded5}(595)
+           │              │            ├─{kded5}(596)
+           │              │            ├─{kded5}(597)
+           │              │            ├─{kded5}(604)
+           │              │            ├─{kded5}(605)
+           │              │            ├─{kded5}(606)
+           │              │            ├─{kded5}(743)
+           │              │            ├─{kded5}(785)
+           │              │            └─{kded5}(1487)
+           │              ├─kioslave5(1977)
+           │              ├─kioslave5(1978)
+           │              ├─kmix(770)─┬─{kmix}(784)
+           │              │           ├─{kmix}(795)
+           │              │           ├─{kmix}(796)
+           │              │           ├─{kmix}(836)
+           │              │           ├─{kmix}(837)
+           │              │           ├─{kmix}(838)
+           │              │           ├─{kmix}(839)
+           │              │           ├─{kmix}(840)
+           │              │           ├─{kmix}(841)
+           │              │           ├─{kmix}(842)
+           │              │           ├─{kmix}(843)
+           │              │           ├─{kmix}(844)
+           │              │           └─{kmix}(923)
+           │              ├─[1mkrunner(1411)[0m─┬─[1mkonsole(1463)[0m─┬─[1mbash(1476)[0m───[1mscript(1489)[0m───[1mbash(1490)[0m─┬─firefox(+
+           │              │               │               │                                        └─[1mpstree(2+[0m
+           │              │               │               ├─{konsole}(1464)
+           │              │               │               ├─{konsole}(1465)
+           │              │               │               ├─{konsole}(1466)
+           │              │               │               ├─{konsole}(1467)
+           │              │               │               ├─{konsole}(1468)
+           │              │               │               ├─{konsole}(1469)
+           │              │               │               ├─{konsole}(1470)
+           │              │               │               ├─{konsole}(1471)
+           │              │               │               ├─{konsole}(1472)
+           │              │               │               ├─{konsole}(1473)
+           │              │               │               ├─{konsole}(1474)
+           │              │               │               └─{konsole}(1475)
+           │              │               ├─{krunner}(1412)
+           │              │               ├─{krunner}(1413)
+           │              │               ├─{krunner}(1414)
+           │              │               ├─{krunner}(1415)
+           │              │               ├─{krunner}(1416)
+           │              │               ├─{krunner}(1417)
+           │              │               ├─{krunner}(1418)
+           │              │               ├─{krunner}(1419)
+           │              │               ├─{krunner}(1420)
+           │              │               ├─{krunner}(1421)
+           │              │               ├─{krunner}(1422)
+           │              │               ├─{krunner}(1423)
+           │              │               ├─{krunner}(1424)
+           │              │               ├─{krunner}(1425)
+           │              │               ├─{krunner}(1431)
+           │              │               ├─{krunner}(1432)
+           │              │               ├─{krunner}(1433)
+           │              │               ├─{krunner}(1434)
+           │              │               ├─{krunner}(1435)
+           │              │               ├─{krunner}(1436)
+           │              │               ├─{krunner}(1437)
+           │              │               ├─{krunner}(1438)
+           │              │               └─{krunner}(1439)
+           │              ├─ksmserver(558)─┬─{ksmserver}(565)
+           │              │                ├─{ksmserver}(566)
+           │              │                ├─{ksmserver}(580)
+           │              │                ├─{ksmserver}(581)
+           │              │                ├─{ksmserver}(582)
+           │              │                ├─{ksmserver}(583)
+           │              │                ├─{ksmserver}(584)
+           │              │                ├─{ksmserver}(585)
+           │              │                ├─{ksmserver}(586)
+           │              │                ├─{ksmserver}(587)
+           │              │                └─{ksmserver}(588)
+           │              ├─kwin_wayland_wr(463)─┬─kwin_wayland(465)─┬─Xwayland(539)
+           │              │                      │                   ├─{kwin_wayland}(515)
+           │              │                      │                   ├─{kwin_wayland}(527)
+           │              │                      │                   ├─{kwin_wayland}(528)
+           │              │                      │                   ├─{kwin_wayland}(529)
+           │              │                      │                   ├─{kwin_wayland}(530)
+           │              │                      │                   ├─{kwin_wayland}(531)
+           │              │                      │                   ├─{kwin_wayland}(532)
+           │              │                      │                   ├─{kwin_wayland}(533)
+           │              │                      │                   ├─{kwin_wayland}(534)
+           │              │                      │                   ├─{kwin_wayland}(535)
+           │              │                      │                   ├─{kwin_wayland}(536)
+           │              │                      │                   └─{kwin_wayland}(538)
+           │              │                      └─{kwin_wayland_wr}(466)
+           │              ├─mission-control(860)─┬─{mission-control}(868)
+           │              │                      ├─{mission-control}(869)
+           │              │                      └─{mission-control}(876)
+           │              ├─obexd(863)
+           │              ├─org_kde_powerde(637)─┬─{org_kde_powerde}(645)
+           │              │                      ├─{org_kde_powerde}(646)
+           │              │                      ├─{org_kde_powerde}(647)
+           │              │                      ├─{org_kde_powerde}(649)
+           │              │                      ├─{org_kde_powerde}(650)
+           │              │                      └─{org_kde_powerde}(706)
+           │              ├─pipewire(701)───{pipewire}(710)
+           │              ├─pipewire-media-(703)───{pipewire-media-}(708)
+           │              ├─plasmashell(599)─┬─{plasmashell}(601)
+           │              │                  ├─{plasmashell}(602)
+           │              │                  ├─{plasmashell}(603)
+           │              │                  ├─{plasmashell}(609)
+           │              │                  ├─{plasmashell}(610)
+           │              │                  ├─{plasmashell}(611)
+           │              │                  ├─{plasmashell}(612)
+           │              │                  ├─{plasmashell}(613)
+           │              │                  ├─{plasmashell}(614)
+           │              │                  ├─{plasmashell}(615)
+           │              │                  ├─{plasmashell}(616)
+           │              │                  ├─{plasmashell}(617)
+           │              │                  ├─{plasmashell}(732)
+           │              │                  ├─{plasmashell}(961)
+           │              │                  ├─{plasmashell}(966)
+           │              │                  ├─{plasmashell}(1151)
+           │              │                  ├─{plasmashell}(1285)
+           │              │                  ├─{plasmashell}(1289)
+           │              │                  ├─{plasmashell}(1305)
+           │              │                  ├─{plasmashell}(1306)
+           │              │                  └─{plasmashell}(1485)
+           │              ├─polkit-kde-auth(636)─┬─{polkit-kde-auth}(644)
+           │              │                      ├─{polkit-kde-auth}(656)
+           │              │                      ├─{polkit-kde-auth}(657)
+           │              │                      ├─{polkit-kde-auth}(675)
+           │              │                      ├─{polkit-kde-auth}(676)
+           │              │                      ├─{polkit-kde-auth}(677)
+           │              │                      ├─{polkit-kde-auth}(678)
+           │              │                      ├─{polkit-kde-auth}(679)
+           │              │                      ├─{polkit-kde-auth}(680)
+           │              │                      ├─{polkit-kde-auth}(681)
+           │              │                      ├─{polkit-kde-auth}(682)
+           │              │                      ├─{polkit-kde-auth}(683)
+           │              │                      ├─{polkit-kde-auth}(687)
+           │              │                      └─{polkit-kde-auth}(690)
+           │              ├─pulseaudio(783)─┬─gsettings-helpe(835)─┬─{gsettings-helpe}(846)
+           │              │                 │                      ├─{gsettings-helpe}(847)
+           │              │                 │                      └─{gsettings-helpe}(848)
+           │              │                 ├─{pulseaudio}(801)
+           │              │                 └─{pulseaudio}(831)
+           │              ├─xdg-desktop-por(472)─┬─{xdg-desktop-por}(477)
+           │              │                      ├─{xdg-desktop-por}(482)
+           │              │                      ├─{xdg-desktop-por}(505)
+           │              │                      ├─{xdg-desktop-por}(700)
+           │              │                      └─{xdg-desktop-por}(713)
+           │              ├─xdg-desktop-por(638)─┬─{xdg-desktop-por}(648)
+           │              │                      ├─{xdg-desktop-por}(651)
+           │              │                      ├─{xdg-desktop-por}(652)
+           │              │                      ├─{xdg-desktop-por}(665)
+           │              │                      ├─{xdg-desktop-por}(666)
+           │              │                      ├─{xdg-desktop-por}(667)
+           │              │                      ├─{xdg-desktop-por}(668)
+           │              │                      ├─{xdg-desktop-por}(669)
+           │              │                      ├─{xdg-desktop-por}(670)
+           │              │                      ├─{xdg-desktop-por}(671)
+           │              │                      ├─{xdg-desktop-por}(672)
+           │              │                      └─{xdg-desktop-por}(673)
+           │              ├─xdg-document-po(484)─┬─fusermount3(493)
+           │              │                      ├─{xdg-document-po}(485)
+           │              │                      ├─{xdg-document-po}(486)
+           │              │                      ├─{xdg-document-po}(492)
+           │              │                      ├─{xdg-document-po}(494)
+           │              │                      └─{xdg-document-po}(495)
+           │              ├─xdg-permission-(487)─┬─{xdg-permission-}(488)
+           │              │                      └─{xdg-permission-}(490)
+           │              └─xembedsniproxy(639)─┬─{xembedsniproxy}(641)
+           │                                    └─{xembedsniproxy}(643)
+           ├─systemd-journal(243)
+           ├─systemd-logind(330)
+           ├─systemd-udevd(257)
+           ├─udisksd(476)─┬─{udisksd}(479)
+           │              ├─{udisksd}(481)
+           │              ├─{udisksd}(510)
+           │              └─{udisksd}(519)
+           └─upowerd(520)─┬─{upowerd}(523)
+                          └─{upowerd}(524)
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ cat pr[K[K../proc_list o[K[K
+[?2004l
+    PID TTY          TIME CMD
+      1 ?        00:00:00 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:00 slub_flushwq
+      6 ?        00:00:00 netns
+      8 ?        00:00:00 kworker/0:0H-events_highpri
+     10 ?        00:00:00 mm_percpu_wq
+     12 ?        00:00:00 rcu_tasks_kthread
+     13 ?        00:00:00 rcu_tasks_rude_kthread
+     14 ?        00:00:00 rcu_tasks_trace_kthread
+     15 ?        00:00:00 ksoftirqd/0
+     16 ?        00:00:00 rcu_preempt
+     17 ?        00:00:00 rcub/0
+     18 ?        00:00:00 migration/0
+     19 ?        00:00:00 idle_inject/0
+     20 ?        00:00:00 kworker/0:1-events
+     21 ?        00:00:00 cpuhp/0
+     22 ?        00:00:00 cpuhp/1
+     23 ?        00:00:00 idle_inject/1
+     24 ?        00:00:00 migration/1
+     25 ?        00:00:00 ksoftirqd/1
+     27 ?        00:00:00 kworker/1:0H-events_highpri
+     28 ?        00:00:00 cpuhp/2
+     29 ?        00:00:00 idle_inject/2
+     30 ?        00:00:00 migration/2
+     31 ?        00:00:00 ksoftirqd/2
+     32 ?        00:00:00 kworker/2:0-events
+     33 ?        00:00:00 kworker/2:0H-events_highpri
+     34 ?        00:00:00 cpuhp/3
+     35 ?        00:00:00 idle_inject/3
+     36 ?        00:00:00 migration/3
+     37 ?        00:00:00 ksoftirqd/3
+     39 ?        00:00:00 kworker/3:0H-kblockd
+     40 ?        00:00:00 kdevtmpfs
+     41 ?        00:00:00 inet_frag_wq
+     42 ?        00:00:00 kauditd
+     43 ?        00:00:00 khungtaskd
+     44 ?        00:00:00 oom_reaper
+     45 ?        00:00:00 writeback
+     46 ?        00:00:00 kcompactd0
+     47 ?        00:00:00 ksmd
+     48 ?        00:00:00 khugepaged
+     49 ?        00:00:00 kintegrityd
+     50 ?        00:00:00 kblockd
+     51 ?        00:00:00 blkcg_punt_bio
+     52 ?        00:00:00 ata_sff
+     53 ?        00:00:00 edac-poller
+     54 ?        00:00:00 devfreq_wq
+     55 ?        00:00:00 watchdogd
+     56 ?        00:00:00 kworker/1:1-events
+     57 ?        00:00:00 kworker/1:1H-kblockd
+     58 ?        00:00:00 kworker/u8:2-events_unbound
+     59 ?        00:00:00 kswapd0
+     66 ?        00:00:00 kthrotld
+     68 ?        00:00:00 kworker/1:2-events
+     71 ?        00:00:00 irq/24-aerdrv
+     72 ?        00:00:00 irq/25-aerdrv
+     73 ?        00:00:00 irq/26-aerdrv
+     74 ?        00:00:00 irq/27-aerdrv
+     75 ?        00:00:00 irq/28-aerdrv
+     77 ?        00:00:00 irq/29-aerdrv
+     78 ?        00:00:00 irq/30-aerdrv
+     79 ?        00:00:00 irq/31-aerdrv
+     80 ?        00:00:00 irq/32-aerdrv
+     81 ?        00:00:00 irq/33-aerdrv
+     82 ?        00:00:00 irq/34-aerdrv
+     83 ?        00:00:00 irq/35-aerdrv
+     84 ?        00:00:00 irq/36-aerdrv
+     85 ?        00:00:00 irq/37-aerdrv
+     86 ?        00:00:00 acpi_thermal_pm
+     87 ?        00:00:00 xenbus_probe
+     88 ?        00:00:00 scsi_eh_0
+     89 ?        00:00:00 scsi_tmf_0
+     90 ?        00:00:00 scsi_eh_1
+     91 ?        00:00:00 scsi_tmf_1
+     92 ?        00:00:00 scsi_eh_2
+     93 ?        00:00:00 scsi_tmf_2
+     94 ?        00:00:00 scsi_eh_3
+     95 ?        00:00:00 scsi_tmf_3
+     96 ?        00:00:00 scsi_eh_4
+     97 ?        00:00:00 scsi_tmf_4
+     98 ?        00:00:00 scsi_eh_5
+     99 ?        00:00:00 scsi_tmf_5
+    105 ?        00:00:00 mld
+    106 ?        00:00:00 ipv6_addrconf
+    111 ?        00:00:00 kstrp
+    115 ?        00:00:00 zswap1
+    116 ?        00:00:00 zswap1
+    117 ?        00:00:00 zswap-shrink
+    118 ?        00:00:00 kworker/u9:0
+    157 ?        00:00:00 charger_manager
+    158 ?        00:00:00 kworker/3:1H-kblockd
+    170 ?        00:00:00 kworker/2:1H-kblockd
+    183 ?        00:00:00 kworker/0:1H-kblockd
+    199 ?        00:00:00 hwrng
+    200 ?        00:00:00 kworker/2:2-cgroup_destroy
+    211 ?        00:00:00 jbd2/vda2-8
+    212 ?        00:00:00 ext4-rsv-conver
+    243 ?        00:00:00 systemd-journal
+    254 ?        00:00:00 kworker/0:3-events
+    257 ?        00:00:00 systemd-udevd
+    305 ?        00:00:00 cryptd
+    330 ?        00:00:00 systemd-logind
+    334 ?        00:00:00 dhcpcd
+    344 ?        00:00:00 NetworkManager
+    348 ?        00:00:00 cfg80211
+    364 ?        00:00:00 sddm
+    372 tty1     00:00:00 Xorg
+    434 ?        00:00:00 sddm-helper
+    476 ?        00:00:00 udisksd
+    493 ?        00:00:00 fusermount3
+    520 ?        00:00:00 upowerd
+   1484 ?        00:00:00 kworker/3:3-events
+   1733 ?        00:00:00 kworker/u8:1-events_power_efficient
+   1786 ?        00:00:00 kworker/u8:0-events_power_efficient
+   1872 ?        00:00:00 kworker/u8:3-events_power_efficient
+   1887 ?        00:00:00 kworker/3:1
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ps -ax | grep firefox
+[?2004l
+   1983 pts/2    Tl     0:02 /usr/lib/firefox/firefox
+   2044 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20221031022441 -prefsLen 21918 -prefMapSize 226989 -appDir /usr/lib/firefox/browser {fe987c35-62e5-4e7d-9a78-e00fecdcdfdc} 1983 true socket
+   2090 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 22336 -prefMapSize 226989 -jsInitLen 246704 -parentBuildID 20221031022441 -appDir /usr/lib/firefox/browser {4514e28b-a8eb-49fe-8fa0-90f3ade291d9} 1983 true tab
+   2111 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 23257 -prefMapSize 226989 -jsInitLen 246704 -parentBuildID 20221031022441 -appDir /usr/lib/firefox/browser {c3620b7b-2406-4648-967f-2e404ba34555} 1983 true tab
+   2198 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 28133 -prefMapSize 226989 -jsInitLen 246704 -parentBuildID 20221031022441 -appDir /usr/lib/firefox/browser {219ed2b0-7264-4041-9c26-ae1e003b17fd} 1983 true tab
+   2202 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 28133 -prefMapSize 226989 -jsInitLen 246704 -parentBuildID 20221031022441 -appDir /usr/lib/firefox/browser {f5ad81aa-5980-43ce-b568-ae06f18e88db} 1983 true tab
+   2213 pts/2    Tl     0:00 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 28133 -prefMapSize 226989 -jsInitLen 246704 -parentBuildID 20221031022441 -appDir /usr/lib/firefox/browser {a4bb386a-c30c-4a2f-a3d4-ca62b16c8c55} 1983 true tab
+   2286 pts/2    R+     0:00 grep firefox
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ kill firefox
+[?2004l
+bash: kill: firefox: arguments must be process or job IDs
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ kill firefox[K[K[K[K[K[K[K[Kall [K[K[K[Kall firefox
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ killall firefox[K[K[K[K[K[K[K[K[K[K[K -9 [K[K[K[K[K[K[K[Kpstree 1983=1983h1983p1983 1983[1P1983[1P1983[1P1983[1P1983-1983h1983p1983 1983
+[?2004l
+firefox(1983)─┬─Privileged Cont(2111)─┬─{Privileged Cont}(2119)
+              │                       ├─{Privileged Cont}(2120)
+              │                       ├─{Privileged Cont}(2121)
+              │                       ├─{Privileged Cont}(2122)
+              │                       ├─{Privileged Cont}(2123)
+              │                       ├─{Privileged Cont}(2124)
+              │                       ├─{Privileged Cont}(2125)
+              │                       ├─{Privileged Cont}(2126)
+              │                       ├─{Privileged Cont}(2127)
+              │                       ├─{Privileged Cont}(2128)
+              │                       ├─{Privileged Cont}(2129)
+              │                       ├─{Privileged Cont}(2150)
+              │                       ├─{Privileged Cont}(2152)
+              │                       ├─{Privileged Cont}(2159)
+              │                       ├─{Privileged Cont}(2160)
+              │                       ├─{Privileged Cont}(2161)
+              │                       ├─{Privileged Cont}(2162)
+              │                       ├─{Privileged Cont}(2173)
+              │                       ├─{Privileged Cont}(2174)
+              │                       └─{Privileged Cont}(2175)
+              ├─Socket Process(2044)─┬─{Socket Process}(2047)
+              │                      ├─{Socket Process}(2049)
+              │                      ├─{Socket Process}(2050)
+              │                      ├─{Socket Process}(2051)
+              │                      └─{Socket Process}(2052)
+              ├─Web Content(2198)─┬─{Web Content}(2203)
+              │                   ├─{Web Content}(2206)
+              │                   ├─{Web Content}(2207)
+              │                   ├─{Web Content}(2208)
+              │                   ├─{Web Content}(2209)
+              │                   ├─{Web Content}(2210)
+              │                   ├─{Web Content}(2212)
+              │                   ├─{Web Content}(2217)
+              │                   ├─{Web Content}(2219)
+              │                   └─{Web Content}(2220)
+              ├─Web Content(2202)─┬─{Web Content}(2218)
+              │                   ├─{Web Content}(2222)
+              │                   ├─{Web Content}(2228)
+              │                   ├─{Web Content}(2229)
+              │                   ├─{Web Content}(2230)
+              │                   ├─{Web Content}(2231)
+              │                   ├─{Web Content}(2232)
+              │                   ├─{Web Content}(2234)
+              │                   ├─{Web Content}(2235)
+              │                   └─{Web Content}(2236)
+              ├─Web Content(2213)─┬─{Web Content}(2221)
+              │                   ├─{Web Content}(2223)
+              │                   ├─{Web Content}(2224)
+              │                   ├─{Web Content}(2225)
+              │                   ├─{Web Content}(2226)
+              │                   ├─{Web Content}(2227)
+              │                   ├─{Web Content}(2233)
+              │                   ├─{Web Content}(2237)
+              │                   ├─{Web Content}(2238)
+              │                   └─{Web Content}(2239)
+              ├─WebExtensions(2090)─┬─{WebExtensions}(2097)
+              │                     ├─{WebExtensions}(2098)
+              │                     ├─{WebExtensions}(2099)
+              │                     ├─{WebExtensions}(2100)
+              │                     ├─{WebExtensions}(2101)
+              │                     ├─{WebExtensions}(2102)
+              │                     ├─{WebExtensions}(2106)
+              │                     ├─{WebExtensions}(2107)
+              │                     ├─{WebExtensions}(2108)
+              │                     ├─{WebExtensions}(2109)
+              │                     ├─{WebExtensions}(2110)
+              │                     ├─{WebExtensions}(2130)
+              │                     ├─{WebExtensions}(2131)
+              │                     ├─{WebExtensions}(2132)
+              │                     ├─{WebExtensions}(2133)
+              │                     ├─{WebExtensions}(2134)
+              │                     ├─{WebExtensions}(2135)
+              │                     ├─{WebExtensions}(2136)
+              │                     ├─{WebExtensions}(2137)
+              │                     └─{WebExtensions}(2138)
+              ├─{firefox}(1996)
+              ├─{firefox}(1997)
+              ├─{firefox}(1998)
+              ├─{firefox}(1999)
+              ├─{firefox}(2000)
+              ├─{firefox}(2001)
+              ├─{firefox}(2003)
+              ├─{firefox}(2005)
+              ├─{firefox}(2006)
+              ├─{firefox}(2007)
+              ├─{firefox}(2008)
+              ├─{firefox}(2009)
+              ├─{firefox}(2010)
+              ├─{firefox}(2011)
+              ├─{firefox}(2012)
+              ├─{firefox}(2013)
+              ├─{firefox}(2041)
+              ├─{firefox}(2042)
+              ├─{firefox}(2043)
+              ├─{firefox}(2048)
+              ├─{firefox}(2054)
+              ├─{firefox}(2055)
+              ├─{firefox}(2056)
+              ├─{firefox}(2064)
+              ├─{firefox}(2065)
+              ├─{firefox}(2066)
+              ├─{firefox}(2067)
+              ├─{firefox}(2068)
+              ├─{firefox}(2069)
+              ├─{firefox}(2070)
+              ├─{firefox}(2071)
+              ├─{firefox}(2072)
+              ├─{firefox}(2073)
+              ├─{firefox}(2074)
+              ├─{firefox}(2075)
+              ├─{firefox}(2076)
+              ├─{firefox}(2078)
+              ├─{firefox}(2083)
+              ├─{firefox}(2085)
+              ├─{firefox}(2086)
+              ├─{firefox}(2087)
+              ├─{firefox}(2088)
+              ├─{firefox}(2089)
+              ├─{firefox}(2092)
+              ├─{firefox}(2094)
+              ├─{firefox}(2095)
+              ├─{firefox}(2096)
+              ├─{firefox}(2103)
+              ├─{firefox}(2104)
+              ├─{firefox}(2112)
+              ├─{firefox}(2115)
+              ├─{firefox}(2116)
+              ├─{firefox}(2117)
+              ├─{firefox}(2118)
+              ├─{firefox}(2143)
+              ├─{firefox}(2147)
+              ├─{firefox}(2148)
+              ├─{firefox}(2153)
+              ├─{firefox}(2168)
+              ├─{firefox}(2169)
+              ├─{firefox}(2170)
+              ├─{firefox}(2171)
+              ├─{firefox}(2176)
+              ├─{firefox}(2177)
+              ├─{firefox}(2178)
+              ├─{firefox}(2179)
+              ├─{firefox}(2181)
+              ├─{firefox}(2182)
+              ├─{firefox}(2183)
+              ├─{firefox}(2184)
+              ├─{firefox}(2185)
+              ├─{firefox}(2186)
+              ├─{firefox}(2187)
+              ├─{firefox}(2191)
+              ├─{firefox}(2192)
+              ├─{firefox}(2194)
+              ├─{firefox}(2201)
+              ├─{firefox}(2204)
+              ├─{firefox}(2215)
+              ├─{firefox}(2240)
+              ├─{firefox}(2249)
+              ├─{firefox}(2250)
+              ├─{firefox}(2251)
+              └─{firefox}(2252)
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ pstree -hp 1983[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kkill -9 1983
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ kill [Kall -u kroko1
+[?2004l
+[1]+  Killed                  firefox
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ps 
+[?2004l
+    PID TTY          TIME CMD
+   1490 pts/2    00:00:00 bash
+   2314 pts/2    00:00:00 ps
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ ps -ap [K[Kx [K[K[K[K[K[K[Kps killall -u kroko1[K2
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ killall -u kroko2[K3
+[?2004l
+]0;c0ris@c0rishost:~/test[?2004h[c0ris@c0rishost test]$ [?2004l
+
+exit
+
+Script done on 2022-11-07 22:50:43+00:00 [COMMAND_EXIT_CODE="1"]
